@@ -30,7 +30,7 @@ public class Input {
                 System.out.println("Введена не строка, попробуйте заного ввести название товара");
                 scanner.nextLine();
             } else {
-                return scanner.next();
+                return scanner.nextLine();
             }
         }
     }
@@ -43,7 +43,14 @@ public class Input {
                 System.out.println("Стоимость товара должна иметь вид рубли.копейки");
                 scanner.nextLine();
             } else {
-                return scanner.nextDouble();
+                double coast = scanner.nextDouble();
+                if (coast > 0) {
+                    return coast;
+                } else {
+                    System.out.println("Стоимость должна быть больше 0");
+                    scanner.nextLine();
+                }
+
             }
         }
     }
