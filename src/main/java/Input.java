@@ -30,7 +30,10 @@ public class Input {
                 System.out.println("Введена не строка, попробуйте заного ввести название товара");
                 scanner.nextLine();
             } else {
-                return scanner.nextLine();
+                String productName = scanner.nextLine();
+                if (!productName.isEmpty()) {
+                    return productName;
+                }
             }
         }
     }
